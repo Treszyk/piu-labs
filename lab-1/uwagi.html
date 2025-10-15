@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uwagi o formularzach HTML</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="site-wrapper">
+      <article class="notes-card">
+        <header>
+          <h1>Uwagi o formularzach HTML</h1>
+          <p>Uwagi o formularzach w czystym HTML.</p>
+        </header>
+
+        <section>
+          <h2>Kiedy warto:</h2>
+          <ul>
+            <li>proste logowanie lub rejestracja bez dodatkowych kroków</li>
+            <li>formularze kontaktowe, zgłoszenia, proste ankiety</li>
+            <li>zapisy, w których dane są wysyłane bezpośrednio na serwer</li>
+            <li>sytuacje, gdy wystarcza standardowa walidacja HTML5</li>
+          </ul>
+          <p>
+            Formularze w czystym HTML dobrze radzą sobie, gdy dane są stałe, a
+            użytkownik nie musi podejmować wielu decyzji w trakcie wypełniania.
+          </p>
+        </section>
+
+        <section>
+          <h2>Kiedy nie warto:</h2>
+          <ul>
+            <li>
+              gdy pola są zależne od siebie lub mają pojawiać się warunkowo
+            </li>
+            <li>
+              gdy potrzebne są dynamiczne podpowiedzi lub walidacja w czasie
+              pisania
+            </li>
+            <li>
+              gdy konieczne jest zapamiętywanie stanu między kolejnymi krokami
+            </li>
+            <li>
+              gdy formularz ma kilka etapów lub wymaga reakcji na dane
+              użytkownika
+            </li>
+          </ul>
+          <p>
+            W takich przypadkach potrzebna jest dodatkowa logika po stronie
+            klienta lub backendu, ponieważ sam HTML nie potrafi obsługiwać
+            zależności ani zmian w czasie rzeczywistym.
+          </p>
+        </section>
+
+        <section>
+          <h2>Najczęstsze problemy:</h2>
+          <ul>
+            <li>
+              zbyt wiele pól w jednym miejscu, co zniechęca do wypełniania
+            </li>
+            <li>
+              niejasne komunikaty błędów, które utrudniają poprawienie danych
+            </li>
+          </ul>
+        </section>
+
+        <footer>
+          <p>
+            Formularze HTML są prostym i skutecznym narzędziem do przekazywania
+            danych, jeśli ich struktura pozostaje nieskomplikowana. W bardziej
+            złożonych przypadkach potrzebne jest wsparcie JavaScriptu lub
+            dodatkowej logiki po stronie serwera, aby zachować wygodę i spójność
+            działania.
+          </p>
+        </footer>
+      </article>
+
+      <a id="return_btn" href="index.html">Powrót</a>
+    </main>
+  </body>
+</html>

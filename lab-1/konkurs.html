@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularz konkursu plastycznego</title>
+    <link rel="stylesheet" href="css/konkurs.css" />
+  </head>
+  <body>
+    <input
+      type="checkbox"
+      id="theme-toggle"
+      class="theme-toggle__input"
+      aria-label="Zmień motyw"
+    />
+    <main class="page">
+      <article class="form-wrapper">
+        <header class="form-header">
+          <h1>Zgłoszenie <br />do konkursu plastycznego</h1>
+          <label for="theme-toggle" class="theme-toggle" title="Zmień motyw">
+            <span aria-hidden="true">🌗</span>
+          </label>
+        </header>
+        <form
+          class="contest-form"
+          action="https://httpbin.org/get"
+          method="get"
+        >
+          <fieldset class="form-section">
+            <label class="form-field">
+              <span>Imię:</span>
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                maxlength="30"
+                required
+              />
+            </label>
+            <label class="form-field">
+              <span>Nazwisko:</span>
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                maxlength="50"
+                required
+              />
+            </label>
+            <label class="form-field">
+              <span>Email:</span>
+              <input type="email" id="email" name="email" required />
+            </label>
+          </fieldset>
+          <fieldset class="form-section">
+            <label class="form-field">
+              <span>Miasto:</span>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                list="city-options"
+                required
+                placeholder="Wpisz lub wybierz"
+              />
+            </label>
+            <datalist id="city-options">
+              <option value="Warszawa"></option>
+              <option value="Kraków"></option>
+              <option value="Gdańsk"></option>
+              <option value="Poznań"></option>
+              <option value="Wrocław"></option>
+            </datalist>
+            <label class="form-field">
+              <span>Data urodzenia:</span>
+              <input type="date" id="birth-date" name="birth_date" required />
+            </label>
+            <label class="form-field">
+              <span>Liczba zgłaszanych prac (od 1 do 6):</span>
+              <input
+                type="number"
+                id="art-count"
+                name="art_count"
+                min="1"
+                max="6"
+                step="1"
+                required
+              />
+            </label>
+            <label class="form-field">
+              <span>Kolor wiodący prac:</span>
+              <input type="color" id="color" name="color" required />
+            </label>
+            <label class="form-field">
+              <span>Kategoria pracy:</span>
+              <select id="category" name="category" required>
+                <option value="" disabled selected>
+                  -- wybierz kategorię --
+                </option>
+                <option value="rysunek">Rysunek</option>
+                <option value="malarstwo">Malarstwo</option>
+                <option value="grafika">Grafika cyfrowa</option>
+              </select>
+            </label>
+          </fieldset>
+          <fieldset class="choice-group">
+            <legend>Publikacja pracy online:</legend>
+            <label class="choice">
+              <input type="radio" name="publication" value="yes" required />
+              <span>Tak</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="publication" value="no" required />
+              <span>Nie</span>
+            </label>
+          </fieldset>
+          <label class="choice">
+            <input type="checkbox" name="agreement" required />
+            <span> Zgadzam się na regulamin konkursu </span>
+          </label>
+          <footer class="form-footer">
+            <button type="submit">Wyślij zgłoszenie</button>
+          </footer>
+        </form>
+        <a id="return_btn" href="index.html">Powrót</a>
+      </article>
+    </main>
+  </body>
+</html>

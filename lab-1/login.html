@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="site-wrapper">
+      <section class="login-card" aria-labelledby="login-heading">
+        <h1 id="login-heading">Panel logowania</h1>
+        <form action="https://httpbin.org/post" method="post">
+          <fieldset>
+            <legend>Dane logowania</legend>
+            <label class="form-field">
+              <span>Adres e-mail</span>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="jan.kowalski@example.com"
+              />
+            </label>
+            <label class="form-field">
+              <span>Hasło</span>
+              <input
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+          </fieldset>
+          <button type="submit">Zaloguj się</button>
+        </form>
+      </section>
+      <a id="return_btn" href="index.html">Powrót</a>
+    </main>
+  </body>
+</html>
