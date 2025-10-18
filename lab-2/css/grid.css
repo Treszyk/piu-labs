@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background: #fff;
+	color: #123;
+	height: 100vh;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	max-width: 1200px;
+	margin-inline: auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'header'
+		'nav'
+		'main'
+		'aside'
+		'footer';
+	gap: 0;
+}
+
+main,
+aside {
+	h1,
+	h2,
+	h3,
+	p {
+		margin-bottom: 1rem;
+		line-height: 1.5;
+	}
+}
+
+header {
+	grid-area: header;
+	background: #f39c12;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+}
+
+header .logo {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: #fff;
+	color: #123;
+	border-radius: 0.25rem;
+	padding: 0.5rem 0.75rem;
+	line-height: 1;
+	font-size: 1.125rem;
+}
+
+header .logo::before {
+	content: 'Logo';
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+header h1 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+nav {
+	grid-area: nav;
+	background: #167ac6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 0.625rem;
+}
+
+nav a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+main {
+	grid-area: main;
+	background: #fff;
+	padding: 1rem;
+}
+
+aside {
+	grid-area: aside;
+	background: #e7f7ee;
+	padding: 1rem;
+}
+
+aside > div {
+	margin-top: 0.5rem;
+	display: flex;
+	gap: 0.625rem;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: 3rem;
+	justify-self: center;
+}
+
+aside > div span {
+	line-height: 1;
+}
+
+footer {
+	grid-area: footer;
+	background: #28a745;
+	color: #fff;
+	text-align: center;
+	padding: 0.75rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer p {
+	font-size: 0.875rem;
+}
+
+@media (min-width: 1024px) {
+	body {
+		background: #e6e6e6;
+	}
+	.container {
+		grid-template-columns: 2fr 1fr;
+		grid-template-areas:
+			'header header'
+			'nav    nav'
+			'main   aside'
+			'footer footer';
+	}
+	header,
+	nav,
+	main,
+	aside,
+	footer {
+		padding-inline: 1rem;
+	}
+	nav {
+		justify-content: flex-start;
+	}
+	aside > div {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		justify-content: center;
+		align-content: start;
+		gap: 0.75rem 1.125rem;
+		font-size: 5rem;
+	}
+}
