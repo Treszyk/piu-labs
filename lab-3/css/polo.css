@@ -13,7 +13,6 @@ html {
 html,
 body {
 	height: 100%;
-	overflow-x: hidden;
 }
 body {
 	margin: 0;
@@ -61,22 +60,37 @@ body {
 	gap: var(--gap);
 	justify-content: center;
 	align-items: stretch;
-}
-.product:has(#color-blue:checked) {
-	--brand: var(--c-blue);
-	--img: url('../images/polo_b.png');
-}
-.product:has(#color-red:checked) {
-	--brand: var(--c-red);
-	--img: url('../images/polo_r.png');
-}
-.product:has(#color-green:checked) {
-	--brand: var(--c-green);
-	--img: url('../images/polo_g.png');
-}
-.product:has(#color-yellow:checked) {
-	--brand: var(--c-yellow);
-	--img: url('../images/polo_y.png');
+
+	&:has(#color-blue:checked) {
+		--brand: var(--c-blue);
+		--img: url('../images/polo_b.png');
+	}
+	&:has(#color-red:checked) {
+		--brand: var(--c-red);
+		--img: url('../images/polo_r.png');
+	}
+	&:has(#color-green:checked) {
+		--brand: var(--c-green);
+		--img: url('../images/polo_g.png');
+	}
+	&:has(#color-yellow:checked) {
+		--brand: var(--c-yellow);
+		--img: url('../images/polo_y.png');
+	}
+
+	&:has(#color-blue:checked) .colors label[for='color-blue'],
+	&:has(#color-red:checked) .colors label[for='color-red'],
+	&:has(#color-green:checked) .colors label[for='color-green'],
+	&:has(#color-yellow:checked) .colors label[for='color-yellow'] {
+		--active: 1;
+	}
+
+	&:has(#s-s:checked) .size[for='s-s'],
+	&:has(#s-m:checked) .size[for='s-m'],
+	&:has(#s-l:checked) .size[for='s-l'],
+	&:has(#s-xl:checked) .size[for='s-xl'] {
+		--sel: 1;
+	}
 }
 
 .gallery {
@@ -89,11 +103,13 @@ body {
 	border-radius: var(--radius);
 	background: #fff;
 	flex: 0 0 auto;
-}
-.gallery .photo {
-	width: min(var(--photo-max), calc(100vw - 48px));
-	aspect-ratio: 1/1;
-	background: no-repeat center/contain var(--img);
+
+	.photo {
+		width: min(var(--photo-max), calc(100vw - 48px));
+		aspect-ratio: 1/1;
+		background: no-repeat center/contain var(--img);
+		transition: background-image 0.3s ease, background-color 0.3s ease;
+	}
 }
 
 .panel {
@@ -111,25 +127,26 @@ body {
 	display: grid;
 	grid-template-columns: 1fr auto;
 	align-items: center;
-}
-.header h1 {
-	margin: 0;
-	font-size: 26px;
-	font-weight: 700;
-}
-.header .badge {
-	background: var(--brand);
-	color: #fff;
-	font-weight: 700;
-	padding: 4px 14px;
-	border-radius: 6px;
-	width: fit-content;
-}
-.header .lead {
-	grid-column: 1/-1;
-	margin: 0;
-	color: #63707e;
-	font-weight: 400;
+
+	h1 {
+		margin: 0;
+		font-size: 26px;
+		font-weight: 700;
+	}
+	.badge {
+		background: var(--brand);
+		color: #fff;
+		font-weight: 700;
+		padding: 4px 14px;
+		border-radius: 6px;
+		width: fit-content;
+	}
+	.lead {
+		grid-column: 1/-1;
+		margin: 0;
+		color: #63707e;
+		font-weight: 400;
+	}
 }
 
 fieldset,
@@ -157,46 +174,47 @@ legend {
 	display: flex;
 	gap: 12px;
 	align-items: center;
-}
 
-.swatches label {
-	width: var(--sw);
-	height: var(--sw);
-	border-radius: 50%;
-	outline: 2px solid #000;
-	display: grid;
-	place-items: center;
-	cursor: pointer;
-	--color: #000;
-	--active: 0;
-}
-.swatches label::after {
-	content: '';
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	background: var(--color);
-	transform-origin: center;
-	transform: scale(calc(1 - (1 - var(--sel-scale)) * var(--active)));
-}
-.colors .swatches label[for='color-blue'] {
-	--color: var(--c-blue);
-}
-.colors .swatches label[for='color-red'] {
-	--color: var(--c-red);
-}
-.colors .swatches label[for='color-green'] {
-	--color: var(--c-green);
-}
-.colors .swatches label[for='color-yellow'] {
-	--color: var(--c-yellow);
-}
+	label {
+		width: var(--sw);
+		height: var(--sw);
+		border-radius: 50%;
+		outline: 2px solid #000;
+		display: grid;
+		place-items: center;
+		cursor: pointer;
+		--color: #000;
+		--active: 0;
+		transition: transform 0.2s ease, box-shadow 0.3s ease;
 
-.product:has(#color-blue:checked) .colors label[for='color-blue'],
-.product:has(#color-red:checked) .colors label[for='color-red'],
-.product:has(#color-green:checked) .colors label[for='color-green'],
-.product:has(#color-yellow:checked) .colors label[for='color-yellow'] {
-	--active: 1;
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background: var(--color);
+			transform-origin: center;
+			transform: scale(calc(1 - (1 - var(--sel-scale)) * var(--active)));
+		}
+
+		&:hover {
+			transform: scale(1.15);
+			box-shadow: 0 0 8px var(--color);
+		}
+	}
+
+	label[for='color-blue'] {
+		--color: var(--c-blue);
+	}
+	label[for='color-red'] {
+		--color: var(--c-red);
+	}
+	label[for='color-green'] {
+		--color: var(--c-green);
+	}
+	label[for='color-yellow'] {
+		--color: var(--c-yellow);
+	}
 }
 
 .size-grid {
@@ -204,6 +222,7 @@ legend {
 	grid-template-columns: repeat(4, 1fr);
 	gap: 10px;
 }
+
 .size {
 	display: grid;
 	place-items: center;
@@ -222,13 +241,13 @@ legend {
 	);
 	font-weight: 700;
 	font-size: 15px;
-}
+	transition: background-size 0.4s ease, color 0.3s ease, transform 0.2s ease,
+		box-shadow 0.3s ease;
 
-.product:has(#s-s:checked) .size[for='s-s'],
-.product:has(#s-m:checked) .size[for='s-m'],
-.product:has(#s-l:checked) .size[for='s-l'],
-.product:has(#s-xl:checked) .size[for='s-xl'] {
-	--sel: 1;
+	&:hover {
+		transform: scale(1.08);
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+	}
 }
 
 .price {
@@ -236,6 +255,7 @@ legend {
 	font-weight: 700;
 	text-align: center;
 }
+
 .cta {
 	appearance: none;
 	border: 2px solid #000;
@@ -248,6 +268,17 @@ legend {
 	width: 180px;
 	align-self: center;
 	cursor: pointer;
+	transition: transform 0.15s ease, box-shadow 0.3s ease,
+		background-color 0.25s ease;
+
+	&:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+	}
+	&:active {
+		transform: translateY(0);
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	}
 }
 
 #order {
