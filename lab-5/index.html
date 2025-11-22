@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Lab 5 - Kształty</title>
+		<link
+			rel="stylesheet"
+			href="./css/style.css" />
+	</head>
+	<body>
+		<main class="layout">
+			<header>
+				<p class="eyebrow">PP5 — Laboratorium 5</p>
+				<h1>Kształty</h1>
+			</header>
+
+			<section class="panel">
+				<div
+					class="controls"
+					aria-label="Akcje">
+					<button
+						class="btn"
+						data-add-square>
+						Dodaj kwadrat
+					</button>
+					<button
+						class="btn"
+						data-add-circle>
+						Dodaj kółko
+					</button>
+					<button
+						class="btn ghost"
+						data-recolor-squares>
+						Przekoloruj kwadraty
+					</button>
+					<button
+						class="btn ghost"
+						data-recolor-circles>
+						Przekoloruj kółka
+					</button>
+				</div>
+
+				<div
+					class="counters"
+					aria-live="polite">
+					<div class="counter">
+						Kwadraty: <strong data-count-squares>0</strong>
+					</div>
+					<div class="counter">
+						Kółka: <strong data-count-circles>0</strong>
+					</div>
+				</div>
+
+				<div
+					class="board"
+					data-board
+					aria-label="plansza z kształtami"></div>
+			</section>
+		</main>
+
+		<script
+			type="module"
+			src="./js/app.js"></script>
+	</body>
+</html>
