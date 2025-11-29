@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Lab 6 - Ajax</title>
+		<link
+			rel="stylesheet"
+			href="./css/style.css" />
+	</head>
+	<body>
+		<div class="app">
+			<div class="header">
+				<h1>Ajax Library Demo</h1>
+				<div class="buttons">
+					<button id="load-success">Pobierz użytkowników</button>
+					<button
+						id="load-error"
+						class="danger">
+						Pobierz błąd
+					</button>
+					<button
+						id="reset"
+						class="secondary">
+						Reset
+					</button>
+				</div>
+			</div>
+
+			<div
+				class="status"
+				id="status">
+				<div
+					id="loader"
+					class="loader"
+					hidden>
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+				</div>
+				<span id="message"></span>
+			</div>
+
+			<ul
+				id="users"
+				class="users"
+				aria-live="polite"></ul>
+		</div>
+
+		<script
+			type="module"
+			src="./js/main.js"></script>
+	</body>
+</html>
