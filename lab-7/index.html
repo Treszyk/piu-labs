@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Lab-7 - Karty produktów</title>
+		<link
+			rel="stylesheet"
+			href="./css/style.css" />
+		<script
+			type="module"
+			src="./js/main.js"></script>
+	</head>
+	<body>
+		<main class="wrapper">
+			<header class="header">
+				<h1>Karta produktu z własnym komponentem</h1>
+				<p>
+					Uniwersalny komponent web-component
+					<strong>&lt;product-card&gt;</strong> zbudowany z wykorzystaniem
+					slotów.
+				</p>
+			</header>
+
+			<section
+				class="grid"
+				aria-label="Przykładowe produkty">
+				<product-card>
+					<img
+						slot="image"
+						src="../lab-3/images/polo_b.png"
+						alt="Kurtka outdoor w ciemnym kolorze" />
+					<span slot="name">Kurtka Softshell Nord</span>
+					<span slot="price">399,00 zł</span>
+					<span slot="promotion">-20% mid-season</span>
+					<span
+						class="color-swatch"
+						slot="colors"
+						style="background: #1e3a8a"></span>
+					<span
+						class="color-swatch"
+						slot="colors"
+						style="background: #9ca3af"></span>
+					<span
+						class="color-swatch"
+						slot="colors"
+						style="background: #0f172a"></span>
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+					<span slot="sizes">XL</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="../lab-3/images/polo_g.png"
+						alt="Jasna koszulka basic" />
+					<span slot="name">Koszulka Riviera Basic</span>
+					<span slot="price">279,00 zł</span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #fbbf24"></span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #3b82f6"></span>
+					<span slot="sizes">XS</span>
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="../lab-3/images/polo_r.png"
+						alt="Sukienka w jasnym stylu" />
+					<span slot="name">Sukienka Bloom</span>
+					<span slot="price">349,00 zł</span>
+					<span slot="promotion">Nowość</span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #f9a8d4"></span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #fef08a"></span>
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="../lab-3/images/polo_y.png"
+						alt="Odzież sportowa na trening" />
+					<span slot="name">Bluza Techfit</span>
+					<span slot="price">199,00 zł</span>
+					<span slot="promotion">-30%</span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #0ea5e9"></span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #334155"></span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+					<span slot="sizes">XL</span>
+					<span slot="sizes">XXL</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="../lab-3/images/polo_b.png"
+						alt="Koszulka casual w kolorze ciemnym" />
+					<span slot="name">Koszulka Organic Basic</span>
+					<span slot="price">99,00 zł</span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #0f172a"></span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #e5e7eb"></span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #f43f5e"></span>
+					<span slot="sizes">S</span>
+					<span slot="sizes">M</span>
+					<span slot="sizes">L</span>
+				</product-card>
+
+				<product-card>
+					<img
+						slot="image"
+						src="../lab-3/images/polo_g.png"
+						alt="Czapka zimowa z dzianiny" />
+					<span slot="name">Czapka Merino</span>
+					<span slot="price">129,00 zł</span>
+					<span slot="promotion">Bestseller</span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #374151"></span>
+					<span
+						slot="colors"
+						class="color-swatch"
+						style="background: #a855f7"></span>
+				</product-card>
+			</section>
+		</main>
+	</body>
+</html>
