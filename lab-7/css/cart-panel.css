@@ -1,0 +1,120 @@
+:host {
+	display: block;
+	height: 100%;
+	color: var(--text, #e5e7eb);
+	font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+}
+
+.panel {
+	height: 90%;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 18px;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	overflow: hidden;
+}
+
+h2 {
+	margin: 0;
+	font-size: 1.05rem;
+	letter-spacing: -0.01em;
+}
+
+.empty {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	overflow: auto;
+	padding-right: 6px;
+	min-height: 0;
+	flex: 1 1 auto;
+
+	scrollbar-width: thin;
+	scrollbar-color: rgba(229, 231, 235, 0.28) rgba(255, 255, 255, 0.06);
+}
+
+ul::-webkit-scrollbar {
+	width: 10px;
+}
+
+ul::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.06);
+	border-radius: 999px;
+}
+
+ul::-webkit-scrollbar-thumb {
+	background: rgba(229, 231, 235, 0.22);
+	border-radius: 999px;
+	border: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+	background: rgba(229, 231, 235, 0.32);
+}
+
+ul::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+li {
+	display: grid;
+	gap: 8px;
+	padding: 12px 14px;
+	border-radius: 12px;
+	background: rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.item-header {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	align-items: center;
+}
+
+.item-name {
+	font-weight: 700;
+}
+
+.item-price {
+	font-weight: 800;
+}
+
+button {
+	justify-self: start;
+	border: 1px solid rgba(255, 255, 255, 0.16);
+	background: rgba(255, 255, 255, 0.08);
+	color: inherit;
+	border-radius: 999px;
+	padding: 6px 12px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: background 150ms ease, border-color 150ms ease;
+}
+
+button:hover {
+	background: rgba(255, 255, 255, 0.14);
+	border-color: rgba(255, 255, 255, 0.24);
+}
+
+.summary {
+	border-top: 1px solid rgba(255, 255, 255, 0.12);
+	padding-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	font-weight: 800;
+	font-size: 1.02rem;
+	flex: 0 0 auto;
+}

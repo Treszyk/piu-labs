@@ -1,0 +1,62 @@
+[
+  {
+    "id": "softshell-nord",
+    "name": "Kurtka Softshell Nord",
+    "price": 399,
+    "image": "polo_b.png",
+    "imageAlt": "Kurtka outdoor w ciemnym kolorze",
+    "promotion": "-20% mid-season",
+    "colors": ["#1e3a8a", "#9ca3af", "#0f172a"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": "riviera-basic",
+    "name": "Koszulka Riviera Basic",
+    "price": 279,
+    "image": "polo_g.png",
+    "imageAlt": "Jasna koszulka basic",
+    "promotion": "",
+    "colors": ["#fbbf24", "#3b82f6"],
+    "sizes": ["XS", "S", "M"]
+  },
+  {
+    "id": "sukienka-bloom",
+    "name": "Sukienka Bloom",
+    "price": 349,
+    "image": "polo_r.png",
+    "imageAlt": "Sukienka w jasnym stylu",
+    "promotion": "Nowość",
+    "colors": ["#f9a8d4", "#fef08a"],
+    "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": "bluzy-techfit",
+    "name": "Bluza Techfit",
+    "price": 199,
+    "image": "polo_y.png",
+    "imageAlt": "Odzież sportowa na trening",
+    "promotion": "-30%",
+    "colors": ["#0ea5e9", "#334155"],
+    "sizes": ["M", "L", "XL", "XXL"]
+  },
+  {
+    "id": "organic-basic",
+    "name": "Koszulka Organic Basic",
+    "price": 99,
+    "image": "polo_b.png",
+    "imageAlt": "Koszulka casual w kolorze ciemnym",
+    "promotion": "",
+    "colors": ["#0f172a", "#e5e7eb", "#f43f5e"],
+    "sizes": ["S", "M", "L"]
+  },
+  {
+    "id": "czapka-merino",
+    "name": "Czapka Merino",
+    "price": 129,
+    "image": "polo_g.png",
+    "imageAlt": "Czapka zimowa z dzianiny",
+    "promotion": "Bestseller",
+    "colors": ["#374151", "#a855f7"],
+    "sizes": []
+  }
+]
