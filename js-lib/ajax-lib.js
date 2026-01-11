@@ -1,9 +1,6 @@
 const DEFAULT_OPTIONS = {
 	baseURL: '',
-	headers: {
-		'Content-Type': 'application/json',
-		Accept: 'application/json',
-	},
+	headers: {},
 	timeout: 5000,
 	fetchOptions: {},
 };
